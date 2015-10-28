@@ -1,0 +1,52 @@
+RIL Marker Parser v1.0
+---------------------------------------------------------------------------------------------------
+
+Program description:
+
+This program skeletonizes a set of molecular markers for a RIL mapping population via
+the following process:
+
+1.  Remove all markers with unacceptable levels of missing data (user-specified)
+2.  Remove all markers which introduce double crossovers (DCO's) into the genetic
+	linkage map
+3.  Scan the remaining genetic map using a window of assignable size (cM) and select one
+	marker to represent each window on the basis of two criteria:
+		a.  Maximum number of underlying markers completely linked to the marker
+		b.  Minimum amount of missing data associated with the marker
+
+
+To use, place the file marker_parser.pl in the same directory as the input file and run.
+Command line example:
+
+>perl marker_parser.pl
+
+
+When run, the program will prompt you for the name of the input file.  The input file
+should be comma-delimited and of the following format:
+
+marker_name_1,chromosome,missing_data,position(cM),linked_markers,A,B,A,B,etc.
+marker_name_2,chromosome,missing_data,position(cM),linked_markers,A,B,A,B,etc.
+etc.
+
+NOTES:
+missing_data = The number of RILs missing data for that marker
+linked_markers = The number of underlying loci completely linked to that marker
+There should be no column headers in the input file!
+Marker names cannot contain commas!
+Markers should be in map order!
+
+
+The program will also prompt the user for information, using the following questions:
+
+1.  What is the symbol used for missing data?
+	(e.g. -,.,etc.)
+2.  Delete markers with more than how many missing data points [RILs]?
+	(e.g. 1,5,10,etc.)
+3.  Delete markers if and only if an acceptable marker is within how many cM?
+	(e.g. 0.5,1,1.5,etc.)
+4.  Search for DCO's within a window length of what size [cM]?
+	(e.g. 0.5,1,1.5,etc.)
+5.  Choose the size [cM] of the scanning window
+	(e.g. 1,2,5,etc.)
+6.  Provide a filename for the tab-delimited results
+
