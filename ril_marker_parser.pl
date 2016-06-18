@@ -1,6 +1,4 @@
 #!/usr/bin/perl
-# file: marker_parser_I.pl
-# usage: just double-click icon and follow directions
 
 use strict;
 use warnings;
@@ -98,7 +96,6 @@ push @reduced_map, [ @$row_last ];
 my $removed_markers = $removed_due_to_missing;
 
 print "\nMarkers removed due to missing data = $removed_markers\n";
-
 
 # Remove markers causing simple DCO's (ABA or BAB) in the map
 
@@ -378,7 +375,6 @@ print "Total initial markers = $total_markers\n";
 print "Markers removed due to missing data and DCO's = $total_removed\n";
 print "Remaining marker count = $final_marker_count\n\n";
 print "Using the specified window size to select representative markers";
-
 
 # Select "best" representative marker within each window
 
