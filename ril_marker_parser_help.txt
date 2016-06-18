@@ -15,10 +15,10 @@ the following process:
 		b.  Minimum amount of missing data associated with the marker
 
 
-To use, place the file marker_parser.pl in the same directory as the input file and run.
+To use, place the file ril_marker_parser.pl in the same directory as the input file and run.
 Command line example:
 
->perl marker_parser.pl
+>perl ril_marker_parser.pl
 
 
 When run, the program will prompt you for the name of the input file.  The input file
@@ -36,7 +36,14 @@ Marker names cannot contain commas!
 Markers should be in map order!
 
 
-The program will also prompt the user for information, using the following questions:
+For example, if you had only 7 RILs, you may have lines like these:
+
+IWB9867,1A,2,0,2,A,B,B,-,A,B,-
+IWB16714,1A,1,1.6,4,A,-,B,A,A,B,B
+etc.
+
+
+When run, the script will prompt you for information, via the following questions:
 
 1.  What is the symbol used for missing data?
 	(e.g. -,.,etc.)
